@@ -1,0 +1,1 @@
+The purpose of this project is to attempt to solve vehicle routing optimization problems. The user can input addresses as a CSV, and my aim is to find the fastest route to reach each destination. If I have time, I'll look into solving the problem with multiple vehicles, consider vehicle capacity, visualize the route, etc.
