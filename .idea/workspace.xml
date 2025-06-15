@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b1ac37-ffe4-4e37-a897-056f6557a401" name="Changes" comment="Obtaining data sample and cleaning + standardizing address format. Saving as CSV">
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/geocoder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/matrix_builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="66b1ac37-ffe4-4e37-a897-056f6557a401" name="Changes" comment="Restructured project folders (created utils folder and cached folder); made matrix_builder for API call for times">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geocoder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/matrix_builder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualizer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +74,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -100,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749913655816</updated>
       <workItem from="1749913656995" duration="918000" />
-      <workItem from="1749994599686" duration="9157000" />
+      <workItem from="1749994599686" duration="10011000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup of project structure">
       <option name="closed" value="true" />
@@ -142,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749999697097</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Restructured project folders (created utils folder and cached folder); made matrix_builder for API call for times">
+      <option name="closed" value="true" />
+      <created>1750006783510</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1750006783510</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +157,8 @@
     <MESSAGE value="Initial setup of project structure" />
     <MESSAGE value="Initial setup of project structure pt 2" />
     <MESSAGE value="Obtaining data sample and cleaning + standardizing address format. Saving as CSV" />
-    <option name="LAST_COMMIT_MESSAGE" value="Obtaining data sample and cleaning + standardizing address format. Saving as CSV" />
+    <MESSAGE value="Restructured project folders (created utils folder and cached folder); made matrix_builder for API call for times" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restructured project folders (created utils folder and cached folder); made matrix_builder for API call for times" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/VRO_Project$matrix_builder.coverage" NAME="matrix_builder Coverage Results" MODIFIED="1750002464165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
