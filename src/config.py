@@ -1,7 +1,8 @@
 from dotenv import load_dotenv
 import os
 
-load_dotenv()  # Loads variables from .env
+# LOAD API KEY FROM .env
+load_dotenv()
 
 ORS_API_KEY = os.getenv("ORS_API_KEY")
 

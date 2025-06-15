@@ -1,4 +1,5 @@
 __pycache__/
+cache/
 *.pyc
 .idea/
 venv/
@@ -6,3 +7,4 @@ venv/
 data/*.json
 data/*
 !data/addresses_sample.csv
+!data/coordinates.csv
