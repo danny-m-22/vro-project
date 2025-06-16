@@ -18,7 +18,7 @@ nyc_building_data = nyc_building_data[nyc_building_data['zipcode'] == '11201']
 # this is done to limit the area being looked at
 
 # GET RANDOM ADDRESSES
-sample_building_data = nyc_building_data.sample(25)
+sample_building_data = nyc_building_data.sample(10)
 
 # GET HOUSE NUMBER, STREET ADDRESS, AND ZIP CODE; CONCATENATE
 sample_building_data = sample_building_data[['lhnd', 'stname', 'zipcode']]
