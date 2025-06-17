@@ -1,6 +1,12 @@
+import os
 import pandas as pd
 
-nyc_building_data = pd.read_csv("../data/bobaadr.txt")
+base_dir = os.path.dirname(os.path.abspath(__file__))
+data_dir = os.path.join(base_dir, "..", "data")
+input_file = os.path.join(data_dir, "bobaadr.txt")
+output_file = os.path.join(data_dir, "addresses_sample.csv")
+
+nyc_building_data = pd.read_csv(input_file)
 nyc_building_data[nyc_building_data['addrtype'].isna()]
 
 # according to the documentation, blank address types indicate
@@ -18,7 +24,7 @@ nyc_building_data = nyc_building_data[nyc_building_data['zipcode'] == '11201']
 # this is done to limit the area being looked at
 
 # GET RANDOM ADDRESSES
-sample_building_data = nyc_building_data.sample(10)
+sample_building_data = nyc_building_data.sample(10).copy()
 
 # GET HOUSE NUMBER, STREET ADDRESS, AND ZIP CODE; CONCATENATE
 sample_building_data = sample_building_data[['lhnd', 'stname', 'zipcode']]
@@ -34,5 +40,5 @@ sample_building_data['Full Address'] = (
 sample_building_data = sample_building_data[['Full Address']]
 
 # SAMPLE TO CSV
-sample_building_data.to_csv('../data/addresses_sample.csv', index=False)
+sample_building_data.to_csv(output_file, index=False)
 print(sample_building_data.head())

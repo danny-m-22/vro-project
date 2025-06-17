@@ -3,7 +3,7 @@ import json
 import os
 from src.config import ORS_API_KEY
 
-CACHE_FILE = os.path.join("../cache", "geocoded_addresses.json")
+CACHE_FILE = os.path.join("cache", "geocoded_addresses.json")
 
 # CHECK IF ADDRESS FILE EXISTS
 def load_cache():
@@ -42,5 +42,6 @@ def batch_geocode(address_list):
         coordinates = geocode_address(client, address, cache)
         coordinates_list.append((address, coordinates))
 
+    print("Saved coordinates to cache")
     save_cache(cache)
     return coordinates_list

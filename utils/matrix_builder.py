@@ -3,7 +3,7 @@ import json
 import os
 from src.config import ORS_API_KEY
 
-CACHE_FILE = os.path.join("../cache", "distance_matrix.json")
+CACHE_FILE = os.path.join("cache", "distance_matrix.json")
 
 # CHECK IF MATRIX FILE EXISTS
 def load_matrix_cache():
@@ -22,7 +22,9 @@ def save_matrix_cache(matrix_data):
 def build_distance_matrix(coordinates):
     cached = load_matrix_cache()
     if cached:
+        print("Using cached matrix")
         return cached
+    print("No cache found; calling API")
 
     client = openrouteservice.Client(key=ORS_API_KEY)
 
@@ -37,4 +39,5 @@ def build_distance_matrix(coordinates):
     )
 
     save_matrix_cache(result)
+    print("Saved matrix to cache")
     return result
