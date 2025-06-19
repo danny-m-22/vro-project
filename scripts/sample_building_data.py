@@ -41,4 +41,3 @@ sample_building_data = sample_building_data[['Full Address']]
 
 # SAMPLE TO CSV
 sample_building_data.to_csv(output_file, index=False)
-print(sample_building_data.head())
