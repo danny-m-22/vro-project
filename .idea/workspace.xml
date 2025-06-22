@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b1ac37-ffe4-4e37-a897-056f6557a401" name="Changes" comment="Solver logic almost done">
+    <list default="true" id="66b1ac37-ffe4-4e37-a897-056f6557a401" name="Changes" comment="NN solver done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cvrp_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/cvrp_solver.py" afterDir="false" />
     </list>
@@ -48,6 +48,7 @@
 }]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/scripts/sample_building_data.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/cvrp_solver.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -100,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749913655816</updated>
       <workItem from="1749913656995" duration="918000" />
-      <workItem from="1749994599686" duration="47189000" />
+      <workItem from="1749994599686" duration="50753000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup of project structure">
       <option name="closed" value="true" />
@@ -190,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750551833719</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="NN solver done">
+      <option name="closed" value="true" />
+      <created>1750600125710</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1750600125710</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,13 +216,14 @@
     <MESSAGE value="File handling adjusted and matrix_builder is working" />
     <MESSAGE value="Matrix builder is finished, moving on to solver; have rough plan" />
     <MESSAGE value="Solver logic almost done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solver logic almost done" />
+    <MESSAGE value="NN solver done" />
+    <option name="LAST_COMMIT_MESSAGE" value="NN solver done" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/VRO_Project$matrix_builder.coverage" NAME="matrix_builder Coverage Results" MODIFIED="1750002464165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/VRO_Project$run_geocoder.coverage" NAME="run_geocoder Coverage Results" MODIFIED="1750036476585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/VRO_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1750291581976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/VRO_Project$cvrp_solver.coverage" NAME="cvrp_solver Coverage Results" MODIFIED="1750599272478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/VRO_Project$cvrp_solver.coverage" NAME="cvrp_solver Coverage Results" MODIFIED="1750602987707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/VRO_Project$sample_building_data.coverage" NAME="sample_building_data Coverage Results" MODIFIED="1750035414802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/VRO_Project$run_matrix.coverage" NAME="run_matrix Coverage Results" MODIFIED="1750291574884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
