@@ -12,7 +12,7 @@ nyc_building_data[nyc_building_data['addrtype'].isna()]
 # according to the documentation, blank address types indicate
 # "real address range of a building on the tax lot."
 
-# NARROW DATA BY ZIP CODE
+# NARROW DATA BY ZIP CODE  #TODO Check zipcodes
 nyc_building_data = nyc_building_data[nyc_building_data['zipcode'] == '11201']
 # see data_documentation for more info on NYC zip codes
 

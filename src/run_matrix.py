@@ -12,16 +12,9 @@ def main():
 
     # convert lon and lat from one string to 2 separate floats
     df[['lon', 'lat']] = df['Coordinates'].str.split(',', expand=True)
-
-    df['lon'] = (df['lon'].str[1:]).str.strip()
-    df['lat'] = (df['lat'].str[0:-1]).str.strip()
-
-    df['lon'] = df['lon'].astype(float)
-    df['lat'] = df['lat'].astype(float)
-
-    # create 2D list
-    lon_list = df['lon'].to_list()
-    lat_list = df['lat'].to_list()
+    df['lon'],  df['lat'] = (df['lon'].str[1:]).str.strip(),  (df['lat'].str[0:-1]).str.strip()
+    df['lon'], df['lat']  = df['lon'].astype(float), df['lat'].astype(float)
+    lon_list, lat_list = df['lon'].to_list(), df['lat'].to_list()
 
     coordinates_list = []
     for i in range(len(lon_list)):

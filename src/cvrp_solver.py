@@ -46,9 +46,10 @@ def nn_runner(duration_matrix, fixed_start=False, start_loc="0"):
 
 
 def two_opt(path_list, path_time):
+
     print("name")
 
-
+# TODO export coordinates in ordered list, not the index
 def main():
     df = load_duration_matrix()
     best_path, best_cost = nn_runner(df)
