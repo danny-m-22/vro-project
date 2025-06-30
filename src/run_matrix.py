@@ -4,7 +4,6 @@ def main():
     import pandas as pd
     import json
 
-    print("Entered run_matrix.main()")
     base_dir = os.path.dirname(os.path.dirname(__file__))
     input_file = os.path.join(base_dir, "data", "coordinates.csv")
 
@@ -19,7 +18,7 @@ def main():
     coordinates_list = []
     for i in range(len(lon_list)):
         coordinates_list.append([lon_list[i], lat_list[i]])
-    # function call
+
     results = build_distance_matrix(coordinates_list)
 
     print("Distance matrix created and stored in cache")

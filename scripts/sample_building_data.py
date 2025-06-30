@@ -2,26 +2,25 @@ import os
 import pandas as pd
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
-data_dir = os.path.join(base_dir, "..", "data")
+data_dir = os.path.join(base_dir, "data")
 input_file = os.path.join(data_dir, "bobaadr.txt")
 output_file = os.path.join(data_dir, "addresses_sample.csv")
 
 nyc_building_data = pd.read_csv(input_file)
+nyc_building_data = nyc_building_data.dropna(subset=["lhnd", "stname", "zipcode"])   # ensure complete address info
+nyc_building_data = nyc_building_data[nyc_building_data["lhnd"].str.strip().str.len() > 0]   # ensure house number exists
 nyc_building_data[nyc_building_data['addrtype'].isna()]
-
-# according to the documentation, blank address types indicate
+# according to the documentation, blank address type indicate
 # "real address range of a building on the tax lot."
 
-# NARROW DATA BY ZIP CODE  #TODO Check zipcodes
-nyc_building_data = nyc_building_data[nyc_building_data['zipcode'] == '11201']
+# NARROW DATA BY ZIP CODE (optional)
+#nyc_building_data = nyc_building_data[nyc_building_data['zipcode'] == '11201']
 # see data_documentation for more info on NYC zip codes
 
 
-# NARROW DATA BY BOROUGH
-#nyc_building_data = nyc_building_data[nyc_building_data['boro'] == '']
-# from documentation:
+# NARROW DATA BY BOROUGH (useful for ORS: using New York as city assumes Manhattan)
+nyc_building_data = nyc_building_data[nyc_building_data['boro'] == 1]
 # 1 = Manhattan, 2 = Bronx, 3 = Brooklyn, 4 = Queens, 5 = Staaten Island
-# this is done to limit the area being looked at
 
 # GET RANDOM ADDRESSES
 sample_building_data = nyc_building_data.sample(10).copy()

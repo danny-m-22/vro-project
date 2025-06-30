@@ -11,6 +11,16 @@ def load_duration_matrix():
     df = df.drop(columns="Unnamed: 0")
     return df.replace(0, np.nan)
 
+def load_coordinates_df():
+    base_dir = os.path.dirname(os.path.dirname(__file__))
+    input_file = os.path.join(base_dir, "data", "coordinates.csv")
+    df = pd.read_csv(input_file)
+
+def save_best_path_df(output_df):
+    base_dir = os.path.dirname(os.path.dirname(__file__))
+    input_file = os.path.join(base_dir, "data", "best_path.csv")
+    output_df.to_csv(output_file, index=False)
+
 def nn_solver(current_loc, input_df):
     begin_loc = current_loc
     visited_list = [current_loc]
@@ -42,17 +52,29 @@ def nn_runner(duration_matrix, fixed_start=False, start_loc="0"):
         else:
             total_dist, path_list = nn_solver(start_loc, duration_matrix)
 
-    return best_list, best_dist
+    coordinates_df = load_coordinates_df()
+    coordinates_df[['lon', 'lat']] = coordinates_df['Coordinates'].str.split(',', expand=True)
+    coordinates_df = coordinates_df.drop('Coordinates', axis=1)
+    coordinates_df['lon'], coordinates_df['lat'] = ((coordinates_df['lon'].str[1:]).str.strip(),
+                                                    (coordinates_df['lat'].str[0:-1]).str.strip())
+    coordinates_df['lon'], coordinates_df['lat'] = (coordinates_df['lon'].astype(float),
+                                                    coordinates_df['lat'].astype(float))
+    best_df = DataFrame(columns=['Address', 'lon', 'lat', 'dist'])
+    for i in range(len(best_list)):
+        coordinates_list.append([lat_list[i], lon_list[i]])
+
+
+    return best_df
 
 
 def two_opt(path_list, path_time):
 
     print("name")
 
-# TODO export coordinates in ordered list, not the index
 def main():
     df = load_duration_matrix()
     best_path, best_cost = nn_runner(df)
+
     print(best_path, best_cost)
 
 

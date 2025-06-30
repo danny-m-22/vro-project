@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b1ac37-ffe4-4e37-a897-056f6557a401" name="Changes" comment="Restructured solver as functions">
+    <list default="true" id="66b1ac37-ffe4-4e37-a897-056f6557a401" name="Changes" comment="Started visualizer and added to-dos">
+      <change afterPath="$PROJECT_DIR$/utils/coordinates_standardizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/addresses_sample.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/addresses_sample.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coordinates.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/sample_building_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/sample_building_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cvrp_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/cvrp_solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/run_geocoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run_geocoder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/run_matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run_matrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/geocoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/geocoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/matrix_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/matrix_builder.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,28 +67,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.cvrp_solver.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.matrix_builder.executor": "Run",
-    "Python.run_geocoder.executor": "Run",
-    "Python.run_matrix.executor": "Run",
-    "Python.sample_building_data.executor": "Run",
-    "Python.visualizer.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.cvrp_solver.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.matrix_builder.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_geocoder.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_matrix.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sample_building_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.visualizer.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/utils" />
@@ -107,7 +112,8 @@
       <updated>1749913655816</updated>
       <workItem from="1749913656995" duration="918000" />
       <workItem from="1749994599686" duration="53142000" />
-      <workItem from="1750983518793" duration="4133000" />
+      <workItem from="1750983518793" duration="4349000" />
+      <workItem from="1751303948647" duration="4580000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup of project structure">
       <option name="closed" value="true" />
@@ -213,11 +219,30 @@
       <option name="project" value="LOCAL" />
       <updated>1750603360721</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Started visualizer and added to-dos">
+      <option name="closed" value="true" />
+      <created>1750988811481</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1750988811481</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial structure" />
@@ -232,15 +257,16 @@
     <MESSAGE value="Solver logic almost done" />
     <MESSAGE value="NN solver done" />
     <MESSAGE value="Restructured solver as functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Restructured solver as functions" />
+    <MESSAGE value="Started visualizer and added to-dos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started visualizer and added to-dos" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/VRO_Project$matrix_builder.coverage" NAME="matrix_builder Coverage Results" MODIFIED="1750002464165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/VRO_Project$visualizer.coverage" NAME="visualizer Coverage Results" MODIFIED="1750985796470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/VRO_Project$run_geocoder.coverage" NAME="run_geocoder Coverage Results" MODIFIED="1750036476585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/VRO_Project$run_geocoder.coverage" NAME="run_geocoder Coverage Results" MODIFIED="1751306787255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/VRO_Project$cvrp_solver.coverage" NAME="cvrp_solver Coverage Results" MODIFIED="1750983567777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/VRO_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1750983642246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/VRO_Project$sample_building_data.coverage" NAME="sample_building_data Coverage Results" MODIFIED="1750035414802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
-    <SUITE FILE_PATH="coverage/VRO_Project$run_matrix.coverage" NAME="run_matrix Coverage Results" MODIFIED="1750291574884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/VRO_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1751306104299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/VRO_Project$sample_building_data.coverage" NAME="sample_building_data Coverage Results" MODIFIED="1751305320971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/VRO_Project$run_matrix.coverage" NAME="run_matrix Coverage Results" MODIFIED="1751306971524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

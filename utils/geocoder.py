@@ -3,7 +3,10 @@ import json
 import os
 from src.config import ORS_API_KEY
 
-CACHE_FILE = os.path.join("cache", "geocoded_addresses.json")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CACHE_DIR = os.path.join(BASE_DIR, "cache")
+CACHE_FILE = os.path.join(CACHE_DIR, "geocoded_addresses.json")
+
 
 # CHECK IF ADDRESS FILE EXISTS
 def load_cache():
@@ -14,9 +17,10 @@ def load_cache():
 
 # SAVE ADDRESS FILE
 def save_cache(cache):
-    os.makedirs("../cache", exist_ok=True)
+    os.makedirs(CACHE_DIR, exist_ok=True)
     with open(CACHE_FILE, "w") as f:
         json.dump(cache, f, indent=2)
+
 
 # GEOCODE ONE ADDRESS
 def geocode_address(client, address, cache):

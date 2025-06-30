@@ -3,7 +3,9 @@ import json
 import os
 from src.config import ORS_API_KEY
 
-CACHE_FILE = os.path.join("cache", "distance_matrix.json")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CACHE_DIR = os.path.join(BASE_DIR, "cache")
+CACHE_FILE = os.path.join(CACHE_DIR, "distance_matrix.json")
 
 # CHECK IF MATRIX FILE EXISTS
 def load_matrix_cache():
@@ -14,7 +16,7 @@ def load_matrix_cache():
 
 # SAVE MATRIX
 def save_matrix_cache(matrix_data):
-    os.makedirs("../cache", exist_ok=True)
+    os.makedirs(CACHE_DIR, exist_ok=True)
     with open(CACHE_FILE, "w") as f:
         json.dump(matrix_data, f, indent=2)
 
