@@ -7,4 +7,3 @@ venv/
 data/*.json
 data/*
 !data/addresses_sample.csv
-!data/coordinates.csv
