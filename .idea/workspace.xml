@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b1ac37-ffe4-4e37-a897-056f6557a401" name="Changes" comment="Started visualizer and added to-dos">
-      <change afterPath="$PROJECT_DIR$/utils/coordinates_standardizer.py" afterDir="false" />
+    <list default="true" id="66b1ac37-ffe4-4e37-a897-056f6557a401" name="Changes" comment="Corrected file path logic and reorganizing cvrp output">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/addresses_sample.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/addresses_sample.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/coordinates.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/sample_building_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/sample_building_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cvrp_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/cvrp_solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/run_geocoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run_geocoder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/run_matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run_matrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/geocoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/geocoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/matrix_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/matrix_builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/coordinates_standardizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/coordinates_standardizer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +64,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.coordinates_standardizer.executor&quot;: &quot;Run&quot;,
     &quot;Python.cvrp_solver.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.matrix_builder.executor&quot;: &quot;Run&quot;,
@@ -113,7 +108,8 @@
       <workItem from="1749913656995" duration="918000" />
       <workItem from="1749994599686" duration="53142000" />
       <workItem from="1750983518793" duration="4349000" />
-      <workItem from="1751303948647" duration="4580000" />
+      <workItem from="1751303948647" duration="7590000" />
+      <workItem from="1751641844902" duration="3183000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup of project structure">
       <option name="closed" value="true" />
@@ -227,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750988811481</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Corrected file path logic and reorganizing cvrp output">
+      <option name="closed" value="true" />
+      <created>1751309186941</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1751309186941</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,14 +262,27 @@
     <MESSAGE value="NN solver done" />
     <MESSAGE value="Restructured solver as functions" />
     <MESSAGE value="Started visualizer and added to-dos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started visualizer and added to-dos" />
+    <MESSAGE value="Corrected file path logic and reorganizing cvrp output" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected file path logic and reorganizing cvrp output" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/cvrp_solver.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/VRO_Project$matrix_builder.coverage" NAME="matrix_builder Coverage Results" MODIFIED="1750002464165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/VRO_Project$visualizer.coverage" NAME="visualizer Coverage Results" MODIFIED="1750985796470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/VRO_Project$run_geocoder.coverage" NAME="run_geocoder Coverage Results" MODIFIED="1751306787255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/VRO_Project$cvrp_solver.coverage" NAME="cvrp_solver Coverage Results" MODIFIED="1750983567777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/VRO_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1751306104299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/VRO_Project$coordinates_standardizer.coverage" NAME="coordinates_standardizer Coverage Results" MODIFIED="1751309689609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/VRO_Project$cvrp_solver.coverage" NAME="cvrp_solver Coverage Results" MODIFIED="1751644729458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/VRO_Project$sample_building_data.coverage" NAME="sample_building_data Coverage Results" MODIFIED="1751305320971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/VRO_Project$run_matrix.coverage" NAME="run_matrix Coverage Results" MODIFIED="1751306971524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>

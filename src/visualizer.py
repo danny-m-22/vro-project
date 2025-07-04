@@ -1,24 +1,17 @@
 import folium
 import pandas as pd
 import os
+from utils.coordinates_standardizer import main as standard_coords
 
 # TODO make a function w/ cvrp ouput as input
 
 base_dir = os.path.dirname(os.path.dirname(__file__))
-input_file = os.path.join(base_dir, "data", "coordinates.csv")
 output_file = os.path.join(base_dir, "data", "route_map.html")
 
-df = pd.read_csv(input_file)
-
-# Clean & Reorganize Coordinates
-
-df[['lon', 'lat']] = df['Coordinates'].str.split(',', expand=True)
-df['lon'],  df['lat'] = (df['lon'].str[1:]).str.strip(),  (df['lat'].str[0:-1]).str.strip()
-df['lon'], df['lat']  = df['lon'].astype(float), df['lat'].astype(float)
-lon_list, lat_list = df['lon'].to_list(), df['lat'].to_list()
-
+df = standard_coords()
+lat_list, lon_list = df['lat'].to_list(), df['lon'].to_list()
 coordinates_list = []
-for i in range(len(lon_list)):
+for i in range(len(lat_list)):
     coordinates_list.append([lat_list[i], lon_list[i]])
 
 

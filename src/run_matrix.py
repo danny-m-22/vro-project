@@ -3,18 +3,12 @@ def main():
     import os
     import pandas as pd
     import json
+    from utils.coordinates_standardizer import main as standard_coords
 
     base_dir = os.path.dirname(os.path.dirname(__file__))
-    input_file = os.path.join(base_dir, "data", "coordinates.csv")
 
-    df = pd.read_csv(input_file)
-
-    # convert lon and lat from one string to 2 separate floats
-    df[['lon', 'lat']] = df['Coordinates'].str.split(',', expand=True)
-    df['lon'],  df['lat'] = (df['lon'].str[1:]).str.strip(),  (df['lat'].str[0:-1]).str.strip()
-    df['lon'], df['lat']  = df['lon'].astype(float), df['lat'].astype(float)
+    df = standard_coords()
     lon_list, lat_list = df['lon'].to_list(), df['lat'].to_list()
-
     coordinates_list = []
     for i in range(len(lon_list)):
         coordinates_list.append([lon_list[i], lat_list[i]])
