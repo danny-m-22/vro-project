@@ -4,7 +4,3 @@ cache/
 .idea/
 venv/
 .env
-data/*.json
-data/*
-!data/durations.csv
-!data/addresses_sample.csv
