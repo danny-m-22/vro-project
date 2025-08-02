@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b1ac37-ffe4-4e37-a897-056f6557a401" name="Changes" comment="integrated 2 opt and finished visualizer. Renamed cvro vrp (will hopefully add cvro some day)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/sample_building_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/sample_building_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/run_geocoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run_geocoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/run_matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run_matrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vrp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vrp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/coordinates_standardizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/coordinates_standardizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/geocoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/geocoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/matrix_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/matrix_builder.py" afterDir="false" />
-    </list>
+    <list default="true" id="66b1ac37-ffe4-4e37-a897-056f6557a401" name="Changes" comment="Updated documentation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +105,7 @@
       <workItem from="1750983518793" duration="4349000" />
       <workItem from="1751303948647" duration="7590000" />
       <workItem from="1751641844902" duration="16007000" />
-      <workItem from="1753737741905" duration="4720000" />
+      <workItem from="1753737741905" duration="5394000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup of project structure">
       <option name="closed" value="true" />
@@ -273,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751685410353</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Updated documentation">
+      <option name="closed" value="true" />
+      <created>1754146788598</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1754146788598</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +301,8 @@
     <MESSAGE value="Corrected file path logic and reorganizing cvrp output" />
     <MESSAGE value="Continued updating file path logic and finished adjusting solver output" />
     <MESSAGE value="integrated 2 opt and finished visualizer. Renamed cvro vrp (will hopefully add cvro some day)" />
-    <option name="LAST_COMMIT_MESSAGE" value="integrated 2 opt and finished visualizer. Renamed cvro vrp (will hopefully add cvro some day)" />
+    <MESSAGE value="Updated documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated documentation" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/VRO_Project$vrp.coverage" NAME="vrp Coverage Results" MODIFIED="1753738548772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
