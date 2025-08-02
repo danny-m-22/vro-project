@@ -14,13 +14,17 @@ This tool calculates and visualizes an optimized route through a list of address
 
 ## Setup
 
-- Clone the repo.
+1. Clone the repo.
 
-- Add your OpenRouteService API key to the file src/config.py by adding this line:
-ORS_API_KEY = "your-api-key"
+2. Add your OpenRouteService API key to `src/config.py`:
+ ```python
+ ORS_API_KEY = "your-api-key"
+ ```
 
-- Install the required Python packages by running this command in your terminal:
+3. Install the required Python packages by running this command in your terminal:
+```bash
 pip install -r requirements.txt
+```
 
 ## Usage
 
@@ -42,3 +46,19 @@ This will load and clean input data, build and cache the duration matrix, solve 
 - data/ — input and output data
 
 - cache/ — cached API responses
+
+## Notes
+
+- Assumes a single vehicle doing a round trip
+
+- Assumes symmetric travel times
+
+- Requires precomputed duration matrix; does not call ORS during runtime
+
+## To Do
+
+- Add multivehicle support
+
+- Add command-line arguments for customization
+
+- Add robustness checks for missing/invalid data
