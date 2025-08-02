@@ -6,5 +6,5 @@ venv/
 .env
 data/*.json
 data/*
-!data/addresses_sample.csv
 !data/durations.csv
+!data/addresses_sample.csv
