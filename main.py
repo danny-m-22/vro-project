@@ -1,7 +1,24 @@
-from src.run_geocoder import main as run_geocoder
-from src.run_matrix import main as run_matrix
-from src.vrp import main as cvrp_solver
-from src.visualizer import main as visualizer
+"""
+main.py
+
+Orchestrates full VRO pipeline:
+1. Solve VRP
+2. Generate route visualization
+"""
+
+from src.vrp import main as solve_vrp
+from src.visualizer import main as generate_map
 
 
-cvrp_solver()
+def main():
+    print("Running vehicle routing solver...")
+    solve_vrp()
+
+    print("Generating route map...")
+    generate_map()
+
+    print("Process completed.")
+
+
+if __name__ == "__main__":
+    main()
