@@ -31,7 +31,21 @@ pip install -r requirements.txt
 Run the full pipeline by executing this command from the root project directory:
 python main.py
 
-This will load and clean input data, build and cache the duration matrix, solve the route, and export best_path.csv and route_map.html.
+This will load and clean input data, build and cache the duration matrix, solve the route, and export best_path.csv and route_map.html
+
+## Project Workflow
+
+1. Geocode Addresses:
+Run run_geocoder.py to convert input addresses (data/addresses_sample.csv) into geographic coordinates. The results are saved as data/coordinates.csv
+
+2. Build Distance Matrix:
+Run run_matrix.py to create a travel duration matrix between all coordinate points using the OpenRouteService API. The matrix is cached in cache/distance_matrix.json and saved as data/durations.csv
+
+3. Solve Vehicle Routing Problem:
+Run src/vrp.py to compute an optimized route using the duration matrix. The best route and associated times are saved to data/best_path.csv
+
+4. Visualize Route:
+Run src/visualizer.py to generate an interactive map (data/route_map.html) showing the optimized path with markers and travel times
 
 ## File Structure
 
