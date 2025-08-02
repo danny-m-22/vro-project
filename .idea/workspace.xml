@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b1ac37-ffe4-4e37-a897-056f6557a401" name="Changes" comment="Updated .gitignore so durations.csv is uploaded" />
+    <list default="true" id="66b1ac37-ffe4-4e37-a897-056f6557a401" name="Changes" comment="Updated .gitignore to hide .idea folder">
+      <change afterPath="$PROJECT_DIR$/data/best_path.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bobaadr.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/route_map.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +109,7 @@
       <workItem from="1750983518793" duration="4349000" />
       <workItem from="1751303948647" duration="7590000" />
       <workItem from="1751641844902" duration="16007000" />
-      <workItem from="1753737741905" duration="6038000" />
+      <workItem from="1753737741905" duration="6370000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup of project structure">
       <option name="closed" value="true" />
@@ -291,7 +295,39 @@
       <option name="project" value="LOCAL" />
       <updated>1754148358652</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Updated .gitignore so durations.csv is uploaded">
+      <option name="closed" value="true" />
+      <created>1754148468176</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1754148468176</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Updated .gitignore so durations.csv is uploaded">
+      <option name="closed" value="true" />
+      <created>1754148537265</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1754148537265</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Updated .gitignore so all data files are present">
+      <option name="closed" value="true" />
+      <created>1754148664340</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1754148664340</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Updated .gitignore to hide .idea folder">
+      <option name="closed" value="true" />
+      <created>1754148763287</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1754148763287</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +363,9 @@
     <MESSAGE value="integrated 2 opt and finished visualizer. Renamed cvro vrp (will hopefully add cvro some day)" />
     <MESSAGE value="Updated documentation" />
     <MESSAGE value="Updated .gitignore so durations.csv is uploaded" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated .gitignore so durations.csv is uploaded" />
+    <MESSAGE value="Updated .gitignore so all data files are present" />
+    <MESSAGE value="Updated .gitignore to hide .idea folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated .gitignore to hide .idea folder" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/VRO_Project$vrp.coverage" NAME="vrp Coverage Results" MODIFIED="1753738548772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
