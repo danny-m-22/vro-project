@@ -3,21 +3,13 @@
 <head>
     
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-    
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
@@ -25,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_8579caec4c9876391d90d961852680a0 {
+                #map_b86be92b9b889a600f71c0263b3e150e {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -34,25 +26,51 @@
                 }
                 .leaflet-container { font-size: 1rem; }
             </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
         
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_8579caec4c9876391d90d961852680a0" ></div>
+            <div class="folium-map" id="map_b86be92b9b889a600f71c0263b3e150e" ></div>
         
 </body>
 <script>
     
     
-            var map_8579caec4c9876391d90d961852680a0 = L.map(
-                "map_8579caec4c9876391d90d961852680a0",
+            var map_b86be92b9b889a600f71c0263b3e150e = L.map(
+                "map_b86be92b9b889a600f71c0263b3e150e",
                 {
-                    center: [40.747173, -73.982116],
+                    center: [40.750381, -73.981991],
                     crs: L.CRS.EPSG3857,
-                    zoom: 12,
-                    zoomControl: true,
-                    preferCanvas: false,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
                 }
             );
 
@@ -60,286 +78,420 @@
 
         
     
-            var tile_layer_cbf1aaa7014472e653b2e0565e482ce0 = L.tileLayer(
-                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
-                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_8579caec4c9876391d90d961852680a0);
-        
-    
-            var marker_9e04f66cc1021f240799d4d9646713c5 = L.marker(
-                [40.747173, -73.982116],
-                {}
-            ).addTo(map_8579caec4c9876391d90d961852680a0);
-        
-    
-            var icon_8743b88add20ca313f7addb61a89b2a5 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            var tile_layer_005caeeeeda4e369eec816202472a689 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
             );
-            marker_9e04f66cc1021f240799d4d9646713c5.setIcon(icon_8743b88add20ca313f7addb61a89b2a5);
         
     
-        var popup_0fc66a4d8cf085ee81c8949ce3a295e3 = L.popup({"maxWidth": "100%", "width": 300});
-
-        
-            
-                var html_e710327dd32fc6df27a57c35d833183c = $(`<div id="html_e710327dd32fc6df27a57c35d833183c" style="width: 100.0%; height: 100.0%;">#1<br><br>60 East 34 Street<br><br>101.86 s to next</div>`)[0];
-                popup_0fc66a4d8cf085ee81c8949ce3a295e3.setContent(html_e710327dd32fc6df27a57c35d833183c);
-            
-        
-
-        marker_9e04f66cc1021f240799d4d9646713c5.bindPopup(popup_0fc66a4d8cf085ee81c8949ce3a295e3)
-        ;
-
+            tile_layer_005caeeeeda4e369eec816202472a689.addTo(map_b86be92b9b889a600f71c0263b3e150e);
         
     
-    
-            var marker_d73d8a9cc08e8c6fa0dbfa810093187a = L.marker(
-                [40.769496, -73.956358],
-                {}
-            ).addTo(map_8579caec4c9876391d90d961852680a0);
-        
-    
-            var icon_15b3d3533e6a6a398f5fa56d47e8b0cb = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_d73d8a9cc08e8c6fa0dbfa810093187a.setIcon(icon_15b3d3533e6a6a398f5fa56d47e8b0cb);
-        
-    
-        var popup_64e551fd945565cfed1aac21a5a23271 = L.popup({"maxWidth": "100%", "width": 300});
-
-        
-            
-                var html_89e55b089dc9025ec1b9433987754148 = $(`<div id="html_89e55b089dc9025ec1b9433987754148" style="width: 100.0%; height: 100.0%;">#2<br><br>330 East 74 Street<br><br>3175.39 s to next</div>`)[0];
-                popup_64e551fd945565cfed1aac21a5a23271.setContent(html_89e55b089dc9025ec1b9433987754148);
-            
-        
-
-        marker_d73d8a9cc08e8c6fa0dbfa810093187a.bindPopup(popup_64e551fd945565cfed1aac21a5a23271)
-        ;
-
-        
-    
-    
-            var marker_df80c3e646234f3ec22cbc9849aed7ff = L.marker(
+            var marker_1bcc5d06c0bab291de4167942c38b7b0 = L.marker(
                 [40.750381, -73.981991],
-                {}
-            ).addTo(map_8579caec4c9876391d90d961852680a0);
+                {
+}
+            ).addTo(map_b86be92b9b889a600f71c0263b3e150e);
         
     
-            var icon_5d2d971c4cab3df73c52773c6f3e3126 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_c603b8a195a9ce1109c03bb46d0b8bcd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
             );
-            marker_df80c3e646234f3ec22cbc9849aed7ff.setIcon(icon_5d2d971c4cab3df73c52773c6f3e3126);
         
     
-        var popup_b541f7c49250e99ed3a53a4a16b86008 = L.popup({"maxWidth": "100%", "width": 300});
+        var popup_738350e7663e2d8b6d1d5844c488fc0b = L.popup({
+  "maxWidth": "100%",
+  "width": 300,
+});
 
         
             
-                var html_4d10c35c8695aac87422c039ecd4dc0e = $(`<div id="html_4d10c35c8695aac87422c039ecd4dc0e" style="width: 100.0%; height: 100.0%;">#3<br><br>10 East 38 Street<br><br>2288.3 s to next</div>`)[0];
-                popup_b541f7c49250e99ed3a53a4a16b86008.setContent(html_4d10c35c8695aac87422c039ecd4dc0e);
+                var html_36ea33ac8e84ee50577cc3c4b7853c33 = $(`<div id="html_36ea33ac8e84ee50577cc3c4b7853c33" style="width: 100.0%; height: 100.0%;">#1<br><br>10 East 38 Street<br><br>2288.3 s to next</div>`)[0];
+                popup_738350e7663e2d8b6d1d5844c488fc0b.setContent(html_36ea33ac8e84ee50577cc3c4b7853c33);
             
         
 
-        marker_df80c3e646234f3ec22cbc9849aed7ff.bindPopup(popup_b541f7c49250e99ed3a53a4a16b86008)
+        marker_1bcc5d06c0bab291de4167942c38b7b0.bindPopup(popup_738350e7663e2d8b6d1d5844c488fc0b)
         ;
 
         
     
     
-            var marker_51c664254613a15ee07040701b9affd2 = L.marker(
+                marker_1bcc5d06c0bab291de4167942c38b7b0.setIcon(icon_c603b8a195a9ce1109c03bb46d0b8bcd);
+            
+    
+            var marker_3407f50b2843c21b8457c5b0be2741c9 = L.marker(
                 [40.738397, -73.988377],
-                {}
-            ).addTo(map_8579caec4c9876391d90d961852680a0);
+                {
+}
+            ).addTo(map_b86be92b9b889a600f71c0263b3e150e);
         
     
-            var icon_f3a8488dce0e36840d37bbdae7dceba2 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_05de5b3d8366bbdf08d964be766dca0d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
             );
-            marker_51c664254613a15ee07040701b9affd2.setIcon(icon_f3a8488dce0e36840d37bbdae7dceba2);
         
     
-        var popup_a01afb5ed864095b8c871aadc4d85593 = L.popup({"maxWidth": "100%", "width": 300});
+        var popup_3a9595e3238ed6b082b397767ee2e593 = L.popup({
+  "maxWidth": "100%",
+  "width": 300,
+});
 
         
             
-                var html_1c9ced13c502155a000ab0bee0d03c37 = $(`<div id="html_1c9ced13c502155a000ab0bee0d03c37" style="width: 100.0%; height: 100.0%;">#4<br><br>42 East 20 Street<br><br>1332.17 s to next</div>`)[0];
-                popup_a01afb5ed864095b8c871aadc4d85593.setContent(html_1c9ced13c502155a000ab0bee0d03c37);
+                var html_09e617279d08138db7a08423977f97da = $(`<div id="html_09e617279d08138db7a08423977f97da" style="width: 100.0%; height: 100.0%;">#2<br><br>42 East 20 Street<br><br>968.07 s to next</div>`)[0];
+                popup_3a9595e3238ed6b082b397767ee2e593.setContent(html_09e617279d08138db7a08423977f97da);
             
         
 
-        marker_51c664254613a15ee07040701b9affd2.bindPopup(popup_a01afb5ed864095b8c871aadc4d85593)
+        marker_3407f50b2843c21b8457c5b0be2741c9.bindPopup(popup_3a9595e3238ed6b082b397767ee2e593)
         ;
 
         
     
     
-            var marker_cc2fbdf26769eebe777528a9d0bb6f13 = L.marker(
-                [40.733067, -74.003268],
-                {}
-            ).addTo(map_8579caec4c9876391d90d961852680a0);
-        
-    
-            var icon_ee62b8990e46f954eb5719b12334617d = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_cc2fbdf26769eebe777528a9d0bb6f13.setIcon(icon_ee62b8990e46f954eb5719b12334617d);
-        
-    
-        var popup_90b30ba98262b1e77263c052f60a9601 = L.popup({"maxWidth": "100%", "width": 300});
-
-        
+                marker_3407f50b2843c21b8457c5b0be2741c9.setIcon(icon_05de5b3d8366bbdf08d964be766dca0d);
             
-                var html_465489c9332023c3bdf53ec287f04264 = $(`<div id="html_465489c9332023c3bdf53ec287f04264" style="width: 100.0%; height: 100.0%;">#5<br><br>14 7 Avenue South<br><br>591.02 s to next</div>`)[0];
-                popup_90b30ba98262b1e77263c052f60a9601.setContent(html_465489c9332023c3bdf53ec287f04264);
-            
-        
-
-        marker_cc2fbdf26769eebe777528a9d0bb6f13.bindPopup(popup_90b30ba98262b1e77263c052f60a9601)
-        ;
-
-        
     
-    
-            var marker_79cf48c0743e3391626d686ef9f43b76 = L.marker(
+            var marker_db22d32541ade77e8f8e79b4f92ce277 = L.marker(
                 [40.868011, -73.926916],
-                {}
-            ).addTo(map_8579caec4c9876391d90d961852680a0);
+                {
+}
+            ).addTo(map_b86be92b9b889a600f71c0263b3e150e);
         
     
-            var icon_630a2c7896180d92ead40c3286e5e1ba = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_0d84b8b2b2c7b985424c358cb8b180bd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
             );
-            marker_79cf48c0743e3391626d686ef9f43b76.setIcon(icon_630a2c7896180d92ead40c3286e5e1ba);
         
     
-        var popup_dc3d8aa7ed8a706acb3dc38f0c186b83 = L.popup({"maxWidth": "100%", "width": 300});
+        var popup_8308b14155c0fcf7ce1e0a70df026799 = L.popup({
+  "maxWidth": "100%",
+  "width": 300,
+});
 
         
             
-                var html_5b90063313733e43209d06d7fc58d904 = $(`<div id="html_5b90063313733e43209d06d7fc58d904" style="width: 100.0%; height: 100.0%;">#6<br><br>167 Payson Avenue<br><br>186.45 s to next</div>`)[0];
-                popup_dc3d8aa7ed8a706acb3dc38f0c186b83.setContent(html_5b90063313733e43209d06d7fc58d904);
+                var html_53a2b4895927d3e3f8ca40583e2ecfa3 = $(`<div id="html_53a2b4895927d3e3f8ca40583e2ecfa3" style="width: 100.0%; height: 100.0%;">#3<br><br>167 Payson Avenue<br><br>186.45 s to next</div>`)[0];
+                popup_8308b14155c0fcf7ce1e0a70df026799.setContent(html_53a2b4895927d3e3f8ca40583e2ecfa3);
             
         
 
-        marker_79cf48c0743e3391626d686ef9f43b76.bindPopup(popup_dc3d8aa7ed8a706acb3dc38f0c186b83)
+        marker_db22d32541ade77e8f8e79b4f92ce277.bindPopup(popup_8308b14155c0fcf7ce1e0a70df026799)
         ;
 
         
     
     
-            var marker_96f2af759d832e8338e43b1bc3462dae = L.marker(
+                marker_db22d32541ade77e8f8e79b4f92ce277.setIcon(icon_0d84b8b2b2c7b985424c358cb8b180bd);
+            
+    
+            var marker_b7dbbd32e9ad9d153d4009d00c0898e1 = L.marker(
                 [40.77867, -73.97639],
-                {}
-            ).addTo(map_8579caec4c9876391d90d961852680a0);
+                {
+}
+            ).addTo(map_b86be92b9b889a600f71c0263b3e150e);
         
     
-            var icon_7b28ec0fc8d40394c3a890cc9e74988e = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_6322567980519f00cbf66daa4d030d0a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
             );
-            marker_96f2af759d832e8338e43b1bc3462dae.setIcon(icon_7b28ec0fc8d40394c3a890cc9e74988e);
         
     
-        var popup_fff745142e25f8f850726f8f00ad3101 = L.popup({"maxWidth": "100%", "width": 300});
+        var popup_6f130584c605fea9eef085717f03d2d6 = L.popup({
+  "maxWidth": "100%",
+  "width": 300,
+});
 
         
             
-                var html_bb4d265d3f292aa97d27fbce1286457c = $(`<div id="html_bb4d265d3f292aa97d27fbce1286457c" style="width: 100.0%; height: 100.0%;">#7<br><br>38 West 75 Street<br><br>393.11 s to next</div>`)[0];
-                popup_fff745142e25f8f850726f8f00ad3101.setContent(html_bb4d265d3f292aa97d27fbce1286457c);
+                var html_c78393f713706922e569948ce23a634a = $(`<div id="html_c78393f713706922e569948ce23a634a" style="width: 100.0%; height: 100.0%;">#4<br><br>38 West 75 Street<br><br>393.11 s to next</div>`)[0];
+                popup_6f130584c605fea9eef085717f03d2d6.setContent(html_c78393f713706922e569948ce23a634a);
             
         
 
-        marker_96f2af759d832e8338e43b1bc3462dae.bindPopup(popup_fff745142e25f8f850726f8f00ad3101)
+        marker_b7dbbd32e9ad9d153d4009d00c0898e1.bindPopup(popup_6f130584c605fea9eef085717f03d2d6)
         ;
 
         
     
     
-            var marker_79cdf5b87f99c16dbab12c9a2d6850ec = L.marker(
+                marker_b7dbbd32e9ad9d153d4009d00c0898e1.setIcon(icon_6322567980519f00cbf66daa4d030d0a);
+            
+    
+            var marker_7b91076cd0cca33bb7166d72c1ed2f81 = L.marker(
                 [40.745409, -74.005163],
-                {}
-            ).addTo(map_8579caec4c9876391d90d961852680a0);
+                {
+}
+            ).addTo(map_b86be92b9b889a600f71c0263b3e150e);
         
     
-            var icon_cc7eff4eb1487ab22ec956cb1e030d6b = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            var icon_9895a7ae4677cd83560c5400039cd7cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
             );
-            marker_79cdf5b87f99c16dbab12c9a2d6850ec.setIcon(icon_cc7eff4eb1487ab22ec956cb1e030d6b);
         
     
-        var popup_3e2d62e4418d5c09ccfa5fc720456425 = L.popup({"maxWidth": "100%", "width": 300});
+        var popup_de233714529eb0fbc81587dc372942c8 = L.popup({
+  "maxWidth": "100%",
+  "width": 300,
+});
 
         
             
-                var html_5beaf9d2dc4e5c497f5cd7220715c6bc = $(`<div id="html_5beaf9d2dc4e5c497f5cd7220715c6bc" style="width: 100.0%; height: 100.0%;">#8<br><br>458 West 20 Street<br><br>1555.44 s to next</div>`)[0];
-                popup_3e2d62e4418d5c09ccfa5fc720456425.setContent(html_5beaf9d2dc4e5c497f5cd7220715c6bc);
+                var html_58f685509b0d3af1788093f81eca1afb = $(`<div id="html_58f685509b0d3af1788093f81eca1afb" style="width: 100.0%; height: 100.0%;">#5<br><br>458 West 20 Street<br><br>305.0 s to next</div>`)[0];
+                popup_de233714529eb0fbc81587dc372942c8.setContent(html_58f685509b0d3af1788093f81eca1afb);
             
         
 
-        marker_79cdf5b87f99c16dbab12c9a2d6850ec.bindPopup(popup_3e2d62e4418d5c09ccfa5fc720456425)
+        marker_7b91076cd0cca33bb7166d72c1ed2f81.bindPopup(popup_de233714529eb0fbc81587dc372942c8)
         ;
 
         
     
     
-            var marker_4f3407a9a24f6bf96b41af7b5d92de44 = L.marker(
-                [40.802492, -73.930495],
-                {}
-            ).addTo(map_8579caec4c9876391d90d961852680a0);
-        
-    
-            var icon_0c77cf3cc84960cadd7c5e504ba488e7 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_4f3407a9a24f6bf96b41af7b5d92de44.setIcon(icon_0c77cf3cc84960cadd7c5e504ba488e7);
-        
-    
-        var popup_36a75e4c35f977305c3d04e9fc6788bf = L.popup({"maxWidth": "100%", "width": 300});
-
-        
+                marker_7b91076cd0cca33bb7166d72c1ed2f81.setIcon(icon_9895a7ae4677cd83560c5400039cd7cb);
             
-                var html_2fb59412d0ba55e6c90ac98cbc502795 = $(`<div id="html_2fb59412d0ba55e6c90ac98cbc502795" style="width: 100.0%; height: 100.0%;">#9<br><br>819 1 Avenue<br><br>1434.39 s to next</div>`)[0];
-                popup_36a75e4c35f977305c3d04e9fc6788bf.setContent(html_2fb59412d0ba55e6c90ac98cbc502795);
-            
-        
-
-        marker_4f3407a9a24f6bf96b41af7b5d92de44.bindPopup(popup_36a75e4c35f977305c3d04e9fc6788bf)
-        ;
-
-        
     
-    
-            var marker_f42df3957a4193811633a7770846881e = L.marker(
+            var marker_ea740c802ddbc3a98497385453c985d5 = L.marker(
                 [40.842986, -73.943561],
-                {}
-            ).addTo(map_8579caec4c9876391d90d961852680a0);
+                {
+}
+            ).addTo(map_b86be92b9b889a600f71c0263b3e150e);
         
     
-            var icon_5975b60994fdf2e850d27fa48e328f0a = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            var icon_138586eb6653014f13623cfc0202405e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
             );
-            marker_f42df3957a4193811633a7770846881e.setIcon(icon_5975b60994fdf2e850d27fa48e328f0a);
         
     
-        var popup_efc7ccbcdb943fb7cfe0c1bd35a250b9 = L.popup({"maxWidth": "100%", "width": 300});
+        var popup_24e6323f153b537f8ffd63378b7450c0 = L.popup({
+  "maxWidth": "100%",
+  "width": 300,
+});
 
         
             
-                var html_6d1720fe1fe19305316008ebfc4e7807 = $(`<div id="html_6d1720fe1fe19305316008ebfc4e7807" style="width: 100.0%; height: 100.0%;">#10<br><br>1072 Riverside Drive<br><br>5.28 s to next</div>`)[0];
-                popup_efc7ccbcdb943fb7cfe0c1bd35a250b9.setContent(html_6d1720fe1fe19305316008ebfc4e7807);
+                var html_96a17971c01303c8fa8a5fffda5ea1f5 = $(`<div id="html_96a17971c01303c8fa8a5fffda5ea1f5" style="width: 100.0%; height: 100.0%;">#6<br><br>1072 Riverside Drive<br><br>5.28 s to next</div>`)[0];
+                popup_24e6323f153b537f8ffd63378b7450c0.setContent(html_96a17971c01303c8fa8a5fffda5ea1f5);
             
         
 
-        marker_f42df3957a4193811633a7770846881e.bindPopup(popup_efc7ccbcdb943fb7cfe0c1bd35a250b9)
+        marker_ea740c802ddbc3a98497385453c985d5.bindPopup(popup_24e6323f153b537f8ffd63378b7450c0)
         ;
 
         
     
     
-            var poly_line_52d1fc26aa4b46168e273f06f9a270a7 = L.polyline(
-                [[40.747173, -73.982116], [40.769496, -73.956358], [40.750381, -73.981991], [40.738397, -73.988377], [40.733067, -74.003268], [40.868011, -73.926916], [40.77867, -73.97639], [40.745409, -74.005163], [40.802492, -73.930495], [40.842986, -73.943561], [40.747173, -73.982116]],
+                marker_ea740c802ddbc3a98497385453c985d5.setIcon(icon_138586eb6653014f13623cfc0202405e);
+            
+    
+            var marker_ad9d4f2e8460b7241202f5ddd907884f = L.marker(
+                [40.747173, -73.982116],
+                {
+}
+            ).addTo(map_b86be92b9b889a600f71c0263b3e150e);
+        
+    
+            var icon_ec19fff12eeff11e451e435a84d113d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c55668c195ec02c4c7debdeb288a554 = L.popup({
+  "maxWidth": "100%",
+  "width": 300,
+});
+
+        
+            
+                var html_43fca57591f2fcf68b911398b7a3d3e0 = $(`<div id="html_43fca57591f2fcf68b911398b7a3d3e0" style="width: 100.0%; height: 100.0%;">#7<br><br>60 East 34 Street<br><br>101.86 s to next</div>`)[0];
+                popup_0c55668c195ec02c4c7debdeb288a554.setContent(html_43fca57591f2fcf68b911398b7a3d3e0);
+            
+        
+
+        marker_ad9d4f2e8460b7241202f5ddd907884f.bindPopup(popup_0c55668c195ec02c4c7debdeb288a554)
+        ;
+
+        
+    
+    
+                marker_ad9d4f2e8460b7241202f5ddd907884f.setIcon(icon_ec19fff12eeff11e451e435a84d113d7);
+            
+    
+            var marker_7d52e1235e9cb9a0a3d4dda763bfe74b = L.marker(
+                [40.769496, -73.956358],
+                {
+}
+            ).addTo(map_b86be92b9b889a600f71c0263b3e150e);
+        
+    
+            var icon_9c1d66dec1d98a0dc64aa691e51d542e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d7d6baf765e4799db1a5c7c85d307b5d = L.popup({
+  "maxWidth": "100%",
+  "width": 300,
+});
+
+        
+            
+                var html_376b121c78c0bc13dc5573cb4323b6f1 = $(`<div id="html_376b121c78c0bc13dc5573cb4323b6f1" style="width: 100.0%; height: 100.0%;">#8<br><br>330 East 74 Street<br><br>799.75 s to next</div>`)[0];
+                popup_d7d6baf765e4799db1a5c7c85d307b5d.setContent(html_376b121c78c0bc13dc5573cb4323b6f1);
+            
+        
+
+        marker_7d52e1235e9cb9a0a3d4dda763bfe74b.bindPopup(popup_d7d6baf765e4799db1a5c7c85d307b5d)
+        ;
+
+        
+    
+    
+                marker_7d52e1235e9cb9a0a3d4dda763bfe74b.setIcon(icon_9c1d66dec1d98a0dc64aa691e51d542e);
+            
+    
+            var marker_4c1dae50814214fbfd99cb1b22ee5f22 = L.marker(
+                [40.733067, -74.003268],
+                {
+}
+            ).addTo(map_b86be92b9b889a600f71c0263b3e150e);
+        
+    
+            var icon_308a26a7f290e677c869a4955970352f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3b8a8ddaa4d919354eadec3e6295da0d = L.popup({
+  "maxWidth": "100%",
+  "width": 300,
+});
+
+        
+            
+                var html_e4efac971beeb122e55d76b899ac51ac = $(`<div id="html_e4efac971beeb122e55d76b899ac51ac" style="width: 100.0%; height: 100.0%;">#9<br><br>14 7 Avenue South<br><br>1898.89 s to next</div>`)[0];
+                popup_3b8a8ddaa4d919354eadec3e6295da0d.setContent(html_e4efac971beeb122e55d76b899ac51ac);
+            
+        
+
+        marker_4c1dae50814214fbfd99cb1b22ee5f22.bindPopup(popup_3b8a8ddaa4d919354eadec3e6295da0d)
+        ;
+
+        
+    
+    
+                marker_4c1dae50814214fbfd99cb1b22ee5f22.setIcon(icon_308a26a7f290e677c869a4955970352f);
+            
+    
+            var marker_2aded61935a9c050f0321c1ab8a3230e = L.marker(
+                [40.802492, -73.930495],
+                {
+}
+            ).addTo(map_b86be92b9b889a600f71c0263b3e150e);
+        
+    
+            var icon_08242a4465a9774d27dafcd0de4a91e5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_330b3ff23d6d7cbf2286333bbf3c024f = L.popup({
+  "maxWidth": "100%",
+  "width": 300,
+});
+
+        
+            
+                var html_6bda7c12f44e0936e49bebced7ef2cc2 = $(`<div id="html_6bda7c12f44e0936e49bebced7ef2cc2" style="width: 100.0%; height: 100.0%;">#10<br><br>819 1 Avenue<br><br>3973.6 s to next</div>`)[0];
+                popup_330b3ff23d6d7cbf2286333bbf3c024f.setContent(html_6bda7c12f44e0936e49bebced7ef2cc2);
+            
+        
+
+        marker_2aded61935a9c050f0321c1ab8a3230e.bindPopup(popup_330b3ff23d6d7cbf2286333bbf3c024f)
+        ;
+
+        
+    
+    
+                marker_2aded61935a9c050f0321c1ab8a3230e.setIcon(icon_08242a4465a9774d27dafcd0de4a91e5);
+            
+    
+            var poly_line_8c19f64ffef96737555a21012f554947 = L.polyline(
+                [[40.750381, -73.981991], [40.738397, -73.988377], [40.868011, -73.926916], [40.77867, -73.97639], [40.745409, -74.005163], [40.842986, -73.943561], [40.747173, -73.982116], [40.769496, -73.956358], [40.733067, -74.003268], [40.802492, -73.930495], [40.750381, -73.981991]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(map_8579caec4c9876391d90d961852680a0);
+            ).addTo(map_b86be92b9b889a600f71c0263b3e150e);
         
 </script>
 </html>
