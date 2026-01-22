@@ -13,7 +13,7 @@ This tool calculates and visualizes an optimized route through a list of address
 - Outputs results to CSV and a Folium route map
 
 <a href="https://danny-m-22.github.io/vro-project/data/route_map.html">
-  <img width="255" height="348" alt="Interactive Route Map" src="https://github.com/user-attachments/assets/df681da6-4b44-4975-9ba4-827cf885c9e9" />
+  <img width="509" height="692" alt="Interactive Route Map" src="https://github.com/user-attachments/assets/df681da6-4b44-4975-9ba4-827cf885c9e9" />
 </a>
 <p><em>Click the image above to view the interactive map.</em></p>
 
