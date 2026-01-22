@@ -2,7 +2,7 @@
 visualizer.py
 
 Generates an interactive HTML map of the best vehicle routing path using Folium.
-Each stop is marked and color-coded. The route is drawn as a polyline. 
+Each stop is marked, and each segment is color coded.
 
 Input:
     - data/best_path.csv : CSV file with lat, lon, address, and time-to-next data
@@ -14,6 +14,7 @@ Output:
 import folium
 import pandas as pd
 import os
+import requests
 
 
 def load_coordinates(path):
@@ -32,6 +33,29 @@ def load_coordinates(path):
     lon_list = df['lon'].to_list()
     coordinates = [[lat, lon] for lat, lon in zip(lat_list, lon_list)]
     return coordinates, df
+
+
+def get_shortest_route(start_lat, start_lon, end_lat, end_lon):
+    """
+    Get list of coordinates for each step in order to draw a route.
+
+    Args:
+        start_lat: lat of current index
+        start_lon: lon of current index
+        end_lat: lat of next index
+        end_lon: lon of next index
+
+    Returns:
+        route_coordinates: fully detailed list of coordinates
+    """
+    url = f'http://router.project-osrm.org/route/v1/driving/{start_lon},{start_lat};{end_lon},{end_lat}?overview=full&geometries=geojson'
+
+    response = requests.get(url)
+    data = response.json()
+    route = data['routes'][0]['geometry']['coordinates']
+    route_coordinates = [(coord[1], coord[0]) for coord in route]
+
+    return route_coordinates
 
 
 def add_markers(route_map, coordinates, df):
@@ -79,20 +103,30 @@ def build_map(coordinates):
     return folium.Map(location=coordinates[0], zoom_start=12, tiles='CartoDB positron')
 
 
-def draw_route(route_map, coordinates):
+def draw_route(route_map, path_coordinates):
     """
-    Add a polyline connecting all route coordinates to the map.
+    Add routes connecting all route coordinates to the map.
 
     Args:
         route_map (folium.Map): Map object to add polyline to
-        coordinates (list): List of [lat, lon] pairs
+        path_coordinates (list): List of [lat, lon] pairs
     """
-    folium.PolyLine(
-        locations=coordinates,
-        color='blue',
-        weight=5,
-        opacity=0.8
-    ).add_to(route_map)
+    colors = [
+        'red', 'blue', 'green', 'purple', 'orange',
+        'darkred', 'cadetblue', 'darkgreen', 'darkblue', 'black'
+    ]
+
+    for index, segment in enumerate(path_coordinates):
+        # Use modulo just in case the list size changes later
+        color = colors[index % len(colors)]
+
+        folium.PolyLine(
+            locations=segment,
+            color=color,
+            weight=5,
+            opacity=0.8,
+            popup=f"Segment {index + 1}"
+        ).add_to(route_map)
 
 
 def save_map(route_map, output_path):
@@ -115,10 +149,19 @@ def main():
     # Load coordinates and metadata
     coordinates, df = load_coordinates(input_file)
 
+    path_coordinates = []
+    for index in range(len(coordinates)-1):
+        coords_list = get_shortest_route(coordinates[index][0],
+                           coordinates[index][1],
+                           coordinates[index+1][0],
+                           coordinates[index+1][1]
+                           )
+        path_coordinates.append(coords_list)
+
     # Build map and add content
     route_map = build_map(coordinates)
     add_markers(route_map, coordinates, df)
-    draw_route(route_map, coordinates)
+    draw_route(route_map, path_coordinates)
 
     # Save to HTML file
     save_map(route_map, output_file)

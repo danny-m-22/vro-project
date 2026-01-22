@@ -53,7 +53,7 @@ def build_distance_matrix(coordinates):
         locations=coordinates,
         profile='driving-car',
         metrics=['duration'],  # Only request travel time (duration)
-        units='m',             # Duration units in minutes
+        units='m',             # distance in meters
         resolve_locations=False,
         sources=list(range(len(coordinates))),      # All locations as sources
         destinations=list(range(len(coordinates)))  # All locations as destinations

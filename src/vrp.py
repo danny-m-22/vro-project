@@ -104,7 +104,7 @@ def two_opt(best_list, duration_df):
     current_path = best_list
     current_cost = sum(duration_df.loc[i, j] for i, j in zip(current_path[:-1], current_path[1:]))
 
-    for i in range(1, len(current_path) - 2):
+    for i in range(0, len(current_path) - 2):
         for j in range(i + 1, len(current_path) - 1):
             # Create a new path by reversing a subsection between i+1 and j
             new_path = current_path[:i + 1] + current_path[i + 1:j + 1][::-1] + current_path[j + 1:]
@@ -158,6 +158,27 @@ def solver(duration_df, fixed_start=False, start_loc=0):
     # Improve route with 2-opt local search
     updated_path, updated_times = two_opt(best_path, duration_df)
 
+    # The solver might return a path like [1, 7, ..., 0, ..., 1].
+    # Rotate it to ensure it starts and ends at index 0 while keeping the optimal order.
+
+    if 0 in updated_path[:-1]:
+        # 1. Get unique stops (remove the duplicate node at the end)
+        unique_route = updated_path[:-1]
+
+        # 2. Find where 0 is currently sitting
+        zero_index = unique_route.index(0)
+
+        # 3. Rotate the list: [Start...End] becomes [0...End] + [Start...0]
+        rotated_route = unique_route[zero_index:] + unique_route[:zero_index]
+
+        # 4. Close the loop by adding 0 to the end
+        updated_path = rotated_route + [0]
+
+        # 5. Recalculate travel times for the new sequence
+        updated_times = [duration_df.loc[u, v] for u, v in zip(updated_path[:-1], updated_path[1:])]
+        updated_times.append(0)
+
+
     # Load standardized coordinates
     coordinates_df = standard_coords()
 
@@ -181,6 +202,7 @@ def main():
     df = load_duration_matrix()
     results = solver(df)
     print(results)
+    print("Total time:", int(results["time_to_next"].sum()))
     save_best_path_df(results)
 
 
